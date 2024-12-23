@@ -1,6 +1,6 @@
-# Morphic
+# buscAI
 
-An AI-powered search engine with a generative UI.
+Um motor de busca inteligente alimentado por IA com interface generativa e tema dark neon.
 
 > [!CAUTION]
 > Morphic is built with Vercel AI SDK RSC. AI SDK RSC is [experimental](https://sdk.vercel.ai/docs/getting-started/navigating-the-library#when-to-use-ai-sdk-rsc) and has some limitations. When using it in production, it is recommended to [migrate](https://sdk.vercel.ai/docs/ai-sdk-rsc/migrating-to-ui) to SDK UI.

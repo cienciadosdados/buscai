@@ -255,10 +255,23 @@ export async function getRedisClient(): Promise<RedisWrapper> {
       )
     }
     try {
+      const url = redisConfig.upstashRedisRestUrl;
+      const token = redisConfig.upstashRedisRestToken;
+
+      // Validate URL format
+      if (!url?.startsWith('https://')) {
+        throw new Error('Invalid Upstash Redis URL. URL must start with https://');
+      }
+
+      // Validate token
+      if (!token || token.length < 10) {
+        throw new Error('Invalid Upstash Redis token');
+      }
+
       redisWrapper = new RedisWrapper(
         new Redis({
-          url: redisConfig.upstashRedisRestUrl,
-          token: redisConfig.upstashRedisRestToken
+          url,
+          token
         })
       )
     } catch (error) {
